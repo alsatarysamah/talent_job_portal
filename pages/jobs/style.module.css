@@ -1,0 +1,22 @@
+
+.countryFlags {
+  display: flex;
+  gap: 4px;
+}
+
+.flag {
+  border-radius: 50%;
+}
+
+.candidates {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.status {
+  color: white;
+  padding: 4px;
+  border-radius: 4px;
+  text-align: center;
+}
