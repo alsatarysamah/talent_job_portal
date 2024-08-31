@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3.25px 6.5px;
+    gap: 12px;
+}
+
+.userImage {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+}
+
+.userName {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px
+}
+
+.expandIcon {
+    padding: 5px 9.2px 5px 6.8px;
+}
+
+.flashIcon {
+    display: flex;
+    justify-content: start;
+    border-radius: 50%;
+}
+
+.flashIconIcon {
+    font-size: 13px;
+    color: #0e6d4a;
+    background: #0FEA9A;
+    border-radius: 50%;
+    padding: 2px;
+}

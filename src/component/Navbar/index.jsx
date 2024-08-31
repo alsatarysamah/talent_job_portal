@@ -3,6 +3,7 @@ import styles from "./style.module.css";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import BadgeOutlinedIcon from "@mui/icons-material/BadgeOutlined";
 import { useRouter } from "next/router";
+import UserMenu from "../UserMenu";
 const { container, leftSide, logo, job } = styles;
 function Navbar() {
   const router = useRouter();
@@ -26,7 +27,7 @@ function Navbar() {
 
         </div>
       </div>
-      <div>Element 4</div>
+      <div><UserMenu/></div>
     </div>
   );
 }
