@@ -1,5 +1,4 @@
 import Image from "next/image";
-import MainLayout from "../MainLayout";
 import Table from "../../shared/Table";
 import { Person2Outlined } from "@mui/icons-material";
 import styles from "./style.module.css";
@@ -11,15 +10,23 @@ import {
   Description as DescriptionIcon,
   DisabledByDefault as DisabledByDefaultIcon,
 } from "@mui/icons-material";
+
+const { container } = styles;
 const data = [
   {
-    jobName: ["Job1 Name Line 1", "Job1 Name Line 2"],
-    countryFlags: ["/flags/us.png", "/flags/ca.png"],
+    jobName: ["Computer Engineer", "Remotely"],
+    countries: [
+      {
+        name: "Jordan",
+        flag: "/images/joFlag.png",
+      },
+      { name: "Jordan", flag: "/images/joFlag.png" },
+    ],
+
     candidates: 5,
     status: "active",
   },
 ];
-
 const columns = [
   {
     Header: "Job",
@@ -33,18 +40,14 @@ const columns = [
   },
   {
     Header: "Country",
-    accessor: "countryFlags",
+    accessor: "countries",
     Cell: ({ cell: { value } }) => (
       <div className={styles.countryFlags}>
-        {value.map((flag, index) => (
-          <Image
-            key={index}
-            src={flag}
-            alt={`flag-${index}`}
-            width={24}
-            height={16}
-            className={styles.flag}
-          />
+        {value.map((country, index) => (
+          <div key={index} className={styles.country}>
+            <Image src={country.flag} width={20} height={20} alt="flag" />
+            <span>{country.name}</span>
+          </div>
         ))}
       </div>
     ),
@@ -113,9 +116,9 @@ const ActionMenu = () => {
 };
 function Job() {
   return (
-    <MainLayout>
+    <div className={container}>
       <Table columns={columns} data={data} />
-    </MainLayout>
+    </div>
   );
 }
 

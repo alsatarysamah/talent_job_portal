@@ -9,7 +9,6 @@ const MainLayout = ({ children }) => {
   return (
     <div className={mainContainer}>
       <Navbar setIsJobClicked={setIsJobClicked} />
-      <main className={main}>{children}</main>
       {isJobClicked && <Job />}
     </div>
   );
