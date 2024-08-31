@@ -5,10 +5,13 @@ import BadgeOutlinedIcon from "@mui/icons-material/BadgeOutlined";
 import { useRouter } from "next/router";
 import UserMenu from "../UserMenu";
 const { container, leftSide, logo, job } = styles;
-function Navbar() {
+function Navbar({ setIsJobClicked }) {
   const router = useRouter();
   const handleJobClick = () => {
-    router.push("/jobs");
+    setIsJobClicked(true);
+  };
+  const handleTalentClick = () => {
+    setIsJobClicked(false);
   };
   return (
     <div className={container}>
@@ -18,16 +21,17 @@ function Navbar() {
         </div>
         <div className={job} onClick={handleJobClick}>
           <LocalMallOutlinedIcon />
-         <div>Jobs</div> 
+          <div>Jobs</div>
         </div>
-        <div className={job}>
+        <div className={job} onClick={handleTalentClick}>
           <BadgeOutlinedIcon />
-         
-         <div> Talent pool</div> 
 
+          <div> Talent pool</div>
         </div>
       </div>
-      <div><UserMenu/></div>
+      <div>
+        <UserMenu />
+      </div>
     </div>
   );
 }

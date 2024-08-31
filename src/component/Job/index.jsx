@@ -1,8 +1,8 @@
 import Image from "next/image";
-import MainLayout from "../../src/component/MainLayout";
-import Table from "../../src/shared/Table";
+import MainLayout from "../MainLayout";
+import Table from "../../shared/Table";
 import { Person2Outlined } from "@mui/icons-material";
-import styles from "./style.module.css"
+import styles from "./style.module.css";
 import { useState } from "react";
 import { Menu, MenuItem, IconButton } from "@mui/material";
 import {
@@ -54,7 +54,7 @@ const columns = [
     accessor: "candidates",
     Cell: ({ cell: { value } }) => (
       <div className={styles.candidates}>
-      <Person2Outlined/>
+        <Person2Outlined />
         {value}
       </div>
     ),
