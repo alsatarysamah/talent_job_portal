@@ -1,9 +1,8 @@
 import axios from 'axios';
-import { API_URL } from '@constants/baseURLs';
+import { API_URL } from '../constants/baseUrl';
 
 async function request(options) {
   const { path, method, headers = {}, body, params } = options;
-
   const axiosOptions = {
     method,
     url: `${API_URL}${path}`,
@@ -13,6 +12,7 @@ async function request(options) {
     },
     data: body || null,
     params: params || null,
+    withCredentials: true,
   };
 
   try {

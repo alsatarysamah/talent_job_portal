@@ -2,7 +2,7 @@ import Image from "next/image";
 import Table from "../../shared/Table";
 import { Person2Outlined } from "@mui/icons-material";
 import styles from "./style.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, MenuItem, IconButton } from "@mui/material";
 import {
   MoreVert as MoreVertIcon,
@@ -10,6 +10,7 @@ import {
   Description as DescriptionIcon,
   DisabledByDefault as DisabledByDefaultIcon,
 } from "@mui/icons-material";
+import request from "../../services/baseRequest";
 
 const { container } = styles;
 const data = [
@@ -83,7 +84,13 @@ const columns = [
 
 const ActionMenu = () => {
   const [anchorEl, setAnchorEl] = useState(null);
-
+const fetchJobs=async()=>{
+const response = await request({path:'/jobs',method:'GET'})
+console.log("🚀 ~ fetchJobs ~ response:", response)
+}
+  useEffect(() => {
+    fetchJobs();
+  }, []);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
