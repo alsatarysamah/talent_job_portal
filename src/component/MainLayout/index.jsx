@@ -1,16 +1,13 @@
-import styles from "../../../styles/Home.module.css";
 import Navbar from "../Navbar";
+import styles from "./style.module.css";
 
-const { main } = styles;
+const { main, mainContainer } = styles;
 const MainLayout = ({ children }) => {
   return (
-    <>
-      <div>
-        <Navbar />
-      </div>
-
+    <div className={mainContainer}>
+      <Navbar />
       <main className={main}>{children}</main>
-    </>
+    </div>
   );
 };
 export default MainLayout;

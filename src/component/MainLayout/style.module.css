@@ -1,0 +1,10 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+  background: #EEF6FF;
+  font-family: 'Poppins', sans-serif;
+  padding: 9.75px 100px;
+
+}
