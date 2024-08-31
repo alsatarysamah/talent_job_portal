@@ -8,7 +8,7 @@ const { container, leftSide, logo, job } = styles;
 function Navbar() {
   const router = useRouter();
   const handleJobClick = () => {
-    router.push("/job");
+    router.push("/jobs");
   };
   return (
     <div className={container}>
