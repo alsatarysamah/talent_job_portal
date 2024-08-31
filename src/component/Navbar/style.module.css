@@ -1,0 +1,44 @@
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-radius: 1.2rem;
+    background: white;
+    padding: 1.63rem 1.95rem;
+    height: 4.6rem;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 14px;
+
+}
+
+.leftSide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.5px;
+}
+
+.logo {
+    padding: 4.4;
+
+    margin-right: 2.25px;
+}
+
+.job {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    transition: color 0.3s ease;
+    text-align: center;
+    gap: 5px;
+    padding: 9.75px;
+}
+
+.job:hover {
+    color: #000;
+    cursor: pointer;
+}
